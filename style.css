@@ -4,12 +4,12 @@ body {
 }
 
 h1 {
-    margin-left: 200px;
-    font-size: 24px;
+    text-align: center;
+    font-size: 50px;
     color: #333;
 }
 
-body2 {
-    margin-left: 175px;
+p {
+    text-align: center;
 }
 
