@@ -13,3 +13,16 @@ p {
     text-align: center;
 }
 
+search{
+    padding: 10px;
+}
+
+search{
+    button:hover{
+        background-color: #3ae718;
+        color: white;
+        cursor: pointer;
+    }
+    
+}
+
