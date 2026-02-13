@@ -1,2 +1,3 @@
 # RGS-university-team
-this is a project for university
+This is a simple web site project for university
+With the aim of learning html + css
