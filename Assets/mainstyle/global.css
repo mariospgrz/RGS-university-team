@@ -1,15 +1,13 @@
+/* Login page */
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", sans-serif;
     background-color: #f2f2f2;
-
-    /* Center the login box */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 
 .login-container {
     background-color: white;
@@ -18,7 +16,6 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 300px;
 }
-
 
 .login-container h2 {
     text-align: center;
@@ -31,20 +28,19 @@ form {
     flex-direction: column;
 }
 
-
 label {
     margin-top: 10px;
     margin-bottom: 5px;
+    font-family: "Quicksand", sans-serif;
     font-weight: bold;
 }
-
 
 input {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    font-family: "Quicksand", sans-serif;
 }
-
 
 button {
     margin-top: 15px;
@@ -53,15 +49,15 @@ button {
     border-radius: 5px;
     background-color: #007bff;
     color: white;
+    font-family: "Quicksand", sans-serif;
     font-size: 16px;
     cursor: pointer;
 }
 
-
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
 }
-
 
 .login-container p {
     text-align: center;
@@ -76,4 +72,94 @@ button:hover {
 
 .login-container a:hover {
     text-decoration: underline;
+    transform: translateY(-2px);
+}
+
+
+/* Submit Page */
+.user-dashboard-container {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.user-dashboard-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.user-dashboard-card {
+    text-decoration: none;
+    background-color: white;
+    padding: 30px;
+    width: 150px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    color: #333;
+    transition: 0.3s;
+}
+
+.user-dashboard-card .material-icons {
+    font-size: 50px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.user-dashboard-card:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Submissions */
+.submission-container {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 450px;
+    text-align: center;
+}
+
+.submission-container h1 {
+    margin-bottom: 10px;
+}
+
+.submission-container p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+#newDeclaration {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#newDeclaration:hover {
+    background-color: #0056b3;
+}
+
+#declarationsList button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 10px;
+    margin-bottom: 2px;
+    border: none;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#declarationsList button:hover {
+    background-color: #c6c6c6;
 }
