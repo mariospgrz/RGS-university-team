@@ -77,3 +77,76 @@ button:hover {
 .login-container a:hover {
     text-decoration: underline;
 }
+
+/* Admin Dashboard Styles */
+body.admin-body {
+    display: block;
+    height: auto;
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+    margin-top: 0;
+}
+
+.sidebar p {
+    text-align: center;
+    color: #ccc;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #444;
+}
+
+.sidebar nav ul li a.logout-btn {
+    background-color: #d9534f;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sidebar nav ul li a.logout-btn:hover {
+    background-color: #c9302c;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #f4f4f4;
+}
