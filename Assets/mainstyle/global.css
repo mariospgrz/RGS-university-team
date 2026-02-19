@@ -149,4 +149,30 @@ body.admin-body {
     flex: 1;
     padding: 40px;
     background-color: #f4f4f4;
+    height: 100vh;
+    overflow-y: auto;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-area: main;
+}
+
+.main-content .header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content .footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
