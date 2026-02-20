@@ -78,15 +78,13 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Admin Dashboard Styles */
-body.admin-body {
-    display: block;
-    height: auto;
-}
+
 
 .admin-container {
     display: flex;
     min-height: 100vh;
+    width: 100%;
+    align-self: stretch;
 }
 
 .sidebar {
@@ -157,7 +155,7 @@ body.admin-body {
     align-items: flex-start;
 }
 
-.sidebarSearch{
+.sidebarSearch {
     width: 220px;
     color: white;
     padding: 10px;
@@ -185,7 +183,7 @@ body.admin-body {
     padding: 20px;
 }
 
-.searchhead{
+.searchhead {
     padding: 20px;
     margin: 0px;
 }
