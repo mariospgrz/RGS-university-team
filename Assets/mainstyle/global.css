@@ -235,41 +235,21 @@ button:hover {
     background-color: #f4f4f4;
 }
 
-.searchbody {
+.search-container {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    align-self: stretch;
 }
 
-.sidebarSearch {
-    width: 220px;
-    color: white;
-    padding: 10px;
-    background-color: #3b3535;
+.searchfooter {
+bottom: 1;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+padding: 10px 20px;
 }
 
-.sidebarSearch h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.sidebarSearch a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 8px;
-}
-
-.sidebarSearch a:hover {
-    background-color: #cc2f2f;
-}
-
-.searchbody content {
+.main-searchcontent {
     flex: 1;
-    padding: 20px;
-}
-
-.searchhead {
-    padding: 20px;
-    margin: 0px;
 }
