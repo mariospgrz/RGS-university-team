@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Profile</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/Assets/mainstyle/global.css">
-</head>
-<body>
+<?php
+require_once "../Include/header.php";
+?>
 
 <div class="profile-container">
     <h1>My Profile</h1>
@@ -35,5 +25,6 @@
     </form>
 </div>
 
-</body>
-</html>
+<?php
+require_once "../Include/footer.php";
+?>
