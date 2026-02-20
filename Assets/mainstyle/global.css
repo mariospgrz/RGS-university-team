@@ -220,13 +220,13 @@ button:hover {
 }
 
 .sidebar nav ul li a.logout-btn {
-    background-color: #d9534f;
+    background-color: #007bff;
     margin-top: 20px;
     text-align: center;
 }
 
 .sidebar nav ul li a.logout-btn:hover {
-    background-color: #c9302c;
+    background-color: #0056b3;
 }
 
 .main-content {
