@@ -25,7 +25,7 @@
   </p>
 
   <div class="landing-buttons">
-    <a href="login.html" class="btn primary-btn">Login</a>
+    <a href="login.php" class="btn primary-btn">Login</a>
     <a href="#" class="btn secondary-btn">Register</a>
   </div>
 </main>

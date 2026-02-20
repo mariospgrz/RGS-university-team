@@ -22,7 +22,7 @@
                     <li><a href="Navigation.html">Search Tab</a></li>
                     <li><a href="Subscribe.html">Subscribe Tab</a></li>
                     <li><a href="Statistics.html">Statistics Tab</a></li>
-                    <li><a href="../index.html" class="logout-btn">Logout</a></li>
+                    <li><a href="../index.php" class="logout-btn">Logout</a></li>
                 </ul>
             </nav>
         </aside>

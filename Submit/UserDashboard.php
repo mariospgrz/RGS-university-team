@@ -20,12 +20,12 @@
 
     <div class="user-dashboard-buttons">
 
-        <a href="profile.html" class="user-dashboard-card">
+        <a href="profile.php" class="user-dashboard-card">
             <span class="material-icons">person</span>
             <p>My Profile</p>
         </a>
 
-        <a href="submissions.html" class="user-dashboard-card">
+        <a href="submissions.php" class="user-dashboard-card">
             <span class="material-icons">assignment</span>
             <p>My Submissions</p>
         </a>
