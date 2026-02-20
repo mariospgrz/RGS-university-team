@@ -301,7 +301,6 @@ button:hover {
 .landing-footer {
   position: fixed;
   bottom: 0;
-  left: 50%;
   transform: translateX(-50%);
   text-align: center;
   padding: 15px;
