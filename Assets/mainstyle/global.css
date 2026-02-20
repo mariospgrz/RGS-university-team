@@ -273,3 +273,74 @@ button:hover {
     padding: 20px;
     margin: 0px;
 }
+
+/* Landing Page */
+.landing-header {
+    padding: 60px 20px 20px;
+}
+
+.landing-header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.landing-content {
+    margin-top: 40px;
+}
+
+.landing-buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 10px;
+    display: inline-block;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.primary-btn {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.primary-btn:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.secondary-btn {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-3px);
+}
+
+.landing-footer {
+    margin-top: 80px;
+    padding: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
