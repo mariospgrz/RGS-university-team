@@ -26,7 +26,7 @@
                     <li><a href="/manager-submissions/">Manager Submissions</a></li>
                     <li><a href="/configure-system/">Configure system</a></li>
                     <li><a href="/reports/">Reports</a></li>
-                    <li><a href="../index.html" class="logout-btn">Logout</a></li>
+                    <li><a href="../login.php" class="logout-btn">Logout</a></li>
                 </ul>
             </nav>
         </aside>

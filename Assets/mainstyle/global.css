@@ -235,41 +235,72 @@ button:hover {
     background-color: #f4f4f4;
 }
 
-.searchbody {
+.search-container {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    align-self: stretch;
 }
 
-.sidebarSearch {
-    width: 220px;
+/* Landing Page */
+.landing-page {
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
     color: white;
-    padding: 10px;
-    background-color: #3b3535;
+    text-align: center;
 }
 
-.sidebarSearch h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+.landing-header {
+    padding: 60px 20px 20px;
 }
 
-.sidebarSearch a {
-    display: block;
-    color: white;
+.landing-header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.landing-content {
+    margin-top: 40px;
+}
+
+.landing-buttons {
+    margin-top: 30px;
+}
+
+.btn {
     text-decoration: none;
-    padding: 8px;
+    padding: 12px 25px;
+    border-radius: 8px;
+    margin: 10px;
+    display: inline-block;
+    font-weight: bold;
+    transition: 0.3s ease;
 }
 
-.sidebarSearch a:hover {
-    background-color: #cc2f2f;
+.primary-btn {
+    background-color: white;
+    color: #1e3c72;
 }
 
-.searchbody content {
-    flex: 1;
+.primary-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.secondary-btn {
+    border: 2px solid white;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: white;
+    color: #1e3c72;
+}
+
+.landing-footer {
+    margin-top: 80px;
     padding: 20px;
-}
-
-.searchhead {
-    padding: 20px;
-    margin: 0px;
+    font-size: 14px;
+    opacity: 0.8;
 }
