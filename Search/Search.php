@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Search</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="../Assets/mainstyle/global.css">
-</head>
+<?php
+require_once "../Include/header.php";
+?>
 
 <body>
     <div class="search-container">
@@ -35,7 +25,9 @@
 <main class="main-searchcontent">
 </main>
 
-<footer id="searchfooter">
-    Goverment Of Cyprus
-</footer>
+
 </html>
+
+<?php
+require_once "../Include/footer.php";
+?>

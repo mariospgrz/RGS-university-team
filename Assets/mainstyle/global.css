@@ -299,8 +299,10 @@ button:hover {
 }
 
 .landing-footer {
-    margin-top: 80px;
-    padding: 20px;
-    font-size: 14px;
-    opacity: 0.8;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  padding: 15px;
 }
