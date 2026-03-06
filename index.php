@@ -14,21 +14,27 @@
 <body class="landing-page">
 
 <header class="landing-header">
-  <h1>ΠΟΘΕΝ ΕΣΧΕΣ</h1>
-  <p>Online Declaration Management System</p>
+    <h1>ΠΟΘΕΝ ΕΣΧΕΣ</h1>
+    <p>Online Declaration Management System</p>
 </header>
 
 <main class="landing-content">
-  <p>
-    Welcome to the official platform for submitting and managing
-    asset declarations.
-  </p>
+    <p>
+        Welcome to the official platform for submitting and managing
+        asset declarations.
+    </p>
 
-  <div class="landing-buttons">
-    <a href="login.php" class="btn primary-btn">Login</a>
-    <a href="#" class="btn secondary-btn">Register</a>
-  </div>
+    <div class="landing-buttons">
+        <a href="login.php" class="btn primary-btn">Login</a>
+        <a href="#" class="btn secondary-btn">Register</a>
+    </div>
 </main>
+
+<footer class="landing-footer">
+    <p>© 2026 Asset Declaration System</p>
+</footer>
+
+</body>
 
 
 <?php
