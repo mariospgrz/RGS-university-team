@@ -235,11 +235,43 @@ button:hover {
     background-color: #f4f4f4;
 }
 
-.search-container {
+.searchbody {
     display: flex;
-    min-height: 100vh;
-    width: 100%;
-    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidebarSearch {
+    width: 220px;
+    color: white;
+    padding: 10px;
+    background-color: #3b3535;
+}
+
+.sidebarSearch h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebarSearch a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.sidebarSearch a:hover {
+    background-color: #cc2f2f;
+}
+
+.searchbody content {
+    flex: 1;
+    padding: 20px;
+}
+
+.searchhead {
+    padding: 20px;
+    margin: 0px;
 }
 
 /* Landing Page */
@@ -299,9 +331,8 @@ button:hover {
 }
 
 .landing-footer {
-    position: fixed;
-    bottom: 0;
-    transform: translateX(-50%);
-    text-align: center;
+    margin-top: 80px;
     padding: 20px;
+    font-size: 14px;
+    opacity: 0.8;
 }

@@ -1,5 +1,12 @@
 <?php
+
 require_once "../Include/header.php";
+
+//if(!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true){
+//    header("location: ../login.php");
+//    exit;
+//}
+
 ?>
 
 <div class="profile-container">
