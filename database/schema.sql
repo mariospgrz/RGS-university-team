@@ -8,7 +8,7 @@ first_name varchar(20),
 last_name varchar(20),
 email varchar(100) unique,
 Phone varchar(8) unique,
-role enum('Admin' , 'User'));
+role enum('Admin' , 'User', 'Politician'));
 
 CREATE TABLE accounts(
 user_id int PRIMARY KEY,
