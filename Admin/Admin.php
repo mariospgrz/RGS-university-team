@@ -8,7 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="../Assets/mainstyle/global.css">
 </head>
@@ -24,7 +26,7 @@
                     <li><a href="/manager-submissions/">Manager Submissions</a></li>
                     <li><a href="/configure-system/">Configure system</a></li>
                     <li><a href="/reports/">Reports</a></li>
-                    <li><a href="../login.php" class="logout-btn">Logout</a></li>
+                    <li><a href="../auth/logout.php" class="logout-btn">Logout</a></li>
                 </ul>
             </nav>
         </aside>
