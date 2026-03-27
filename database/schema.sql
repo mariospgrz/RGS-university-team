@@ -14,7 +14,7 @@ CREATE TABLE accounts(
 user_id int PRIMARY KEY,
 username varchar(20),
 password_hash varchar(20),
-foreign key (user_id) references users(users_id));
+foreign key (user_id) references users(user_id));
 
 CREATE TABLE positions(
 position_id int PRIMARY KEY,
