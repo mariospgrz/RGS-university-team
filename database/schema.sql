@@ -21,11 +21,8 @@ position_id int PRIMARY KEY,
 position_name varchar(100));
 
 CREATE TABLE govOfficers(
-officer_id int PRIMARY KEY,
-officer_name varchar(30),
-officer_lastname varchar(30),
+user_id int PRIMARY KEY,
+officer_id int UNIQUE,
 officer_position int,
-foreign key (officer_position) references positions(position_id)),
-foreign key (officer_name) references users(first_name),
-foreign key (officer_lastname) references users(last_name);
-
+foreign key (officer_position) references positions(position_id),
+foreign key (user_id) references users(user_id));
