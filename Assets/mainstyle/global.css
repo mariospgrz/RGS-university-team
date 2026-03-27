@@ -235,25 +235,65 @@ button:hover {
     background-color: #f4f4f4;
 }
 
-.search-container {
+.searchbody {
     display: flex;
-    min-height: 100vh;
-    width: 100%;
-    align-self: stretch;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
+.sidebarSearch {
+    width: 220px;
+    color: white;
+    padding: 10px;
+    background-color: #3b3535;
+}
+
+.sidebarSearch h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebarSearch a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+}
+
+.sidebarSearch a:hover {
+    background-color: #cc2f2f;
+}
+
+.searchbody content {
+    flex: 1;
+    padding: 20px;
+}
+
+.searchhead {
+    padding: 20px;
+    margin: 0px;
+}
+
+/* Landing Page */
 /* Landing Page */
 .landing-page {
     font-family: "Quicksand", sans-serif;
     margin: 0;
-    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background: linear-gradient(to right, #1e3c72, #2a5298);
     color: white;
     text-align: center;
 }
 
+/* Header */
 .landing-header {
-    padding: 60px 20px 20px;
+    margin-bottom: 20px;
 }
 
 .landing-header h1 {
@@ -261,14 +301,17 @@ button:hover {
     margin-bottom: 10px;
 }
 
+/* Main content */
 .landing-content {
-    margin-top: 40px;
+    max-width: 600px;
 }
 
+/* Buttons container */
 .landing-buttons {
     margin-top: 30px;
 }
 
+/* Buttons */
 .btn {
     text-decoration: none;
     padding: 12px 25px;
@@ -279,6 +322,7 @@ button:hover {
     transition: 0.3s ease;
 }
 
+/* Primary button */
 .primary-btn {
     background-color: white;
     color: #1e3c72;
@@ -288,6 +332,7 @@ button:hover {
     background-color: #f0f0f0;
 }
 
+/* Secondary button */
 .secondary-btn {
     border: 2px solid white;
     color: white;
@@ -298,12 +343,13 @@ button:hover {
     color: #1e3c72;
 }
 
+/* Footer */
 .landing-footer {
-    margin-top: 80px;
-    padding: 20px;
+    position: absolute;
+    bottom: 20px;
     font-size: 14px;
-    opacity: 0.8;
 }
+
 
 /* Register Page */
 .register-box {
