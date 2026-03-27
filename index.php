@@ -26,17 +26,10 @@
 
     <div class="landing-buttons">
         <a href="login.php" class="btn primary-btn">Login</a>
-        <a href="#" class="btn secondary-btn">Register</a>
+        <a href="register.php" class="btn secondary-btn">Register</a>
     </div>
 </main>
-
-<footer class="landing-footer">
-    <p>© 2026 Asset Declaration System</p>
-</footer>
-
 </body>
-
-
 <?php
 require_once "./Include/footer.php";
 ?>
