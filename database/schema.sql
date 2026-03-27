@@ -13,7 +13,7 @@ role enum('Admin' , 'User'));
 CREATE TABLE accounts(
 user_id int PRIMARY KEY,
 username varchar(20),
-password_hash varchar(20),
+password_hash varchar(255),
 foreign key (user_id) references users(user_id));
 
 CREATE TABLE positions(
