@@ -275,17 +275,25 @@ button:hover {
 }
 
 /* Landing Page */
+/* Landing Page */
 .landing-page {
     font-family: "Quicksand", sans-serif;
     margin: 0;
-    padding: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background: linear-gradient(to right, #1e3c72, #2a5298);
     color: white;
     text-align: center;
 }
 
+/* Header */
 .landing-header {
-    padding: 60px 20px 20px;
+    margin-bottom: 20px;
 }
 
 .landing-header h1 {
@@ -293,14 +301,17 @@ button:hover {
     margin-bottom: 10px;
 }
 
+/* Main content */
 .landing-content {
-    margin-top: 40px;
+    max-width: 600px;
 }
 
+/* Buttons container */
 .landing-buttons {
     margin-top: 30px;
 }
 
+/* Buttons */
 .btn {
     text-decoration: none;
     padding: 12px 25px;
@@ -311,6 +322,7 @@ button:hover {
     transition: 0.3s ease;
 }
 
+/* Primary button */
 .primary-btn {
     background-color: white;
     color: #1e3c72;
@@ -320,6 +332,7 @@ button:hover {
     background-color: #f0f0f0;
 }
 
+/* Secondary button */
 .secondary-btn {
     border: 2px solid white;
     color: white;
@@ -330,9 +343,46 @@ button:hover {
     color: #1e3c72;
 }
 
+/* Footer */
 .landing-footer {
-    margin-top: 80px;
-    padding: 20px;
+    position: absolute;
+    bottom: 20px;
     font-size: 14px;
-    opacity: 0.8;
+}
+
+
+/* Register Page */
+.register-box {
+    background:white;
+    padding:30px;
+    border-radius:8px;
+    width:320px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.register_input {
+    width:90%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+.register_button {
+    width: 100%;
+    padding: 10px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register_button:hover {
+    background: #0056b3;
 }
