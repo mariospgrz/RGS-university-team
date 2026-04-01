@@ -2,12 +2,20 @@
 require_once "../Include/header.php";
 ?>
 
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'User') {
+    header("Location: ../index.php");
+    exit;
+}
+?>
 
 <div class="submission-container">
     <h1>My Submissions</h1>
     <p>Συμπληρώστε το Πόθεν Έσχες σας και υποβάλετε για οριστική καταχώρηση.</p>
     <div>
-        <button id="newDeclaration">Make New Declaration</button>
+        <a href="declaration.php" id="newDeclaration">Make New Declaration</a>
     </div>
 
     <div class="previous-declarations">

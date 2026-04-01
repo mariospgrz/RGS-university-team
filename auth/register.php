@@ -1,7 +1,5 @@
 <?php
-// session_start()
 session_start();
-// Require db connection
 require_once '../Include/db.php';
 
 $errors = [];
@@ -90,21 +88,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <!DOCTYPE html>
 <html lang="el">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Register</title>
-    <!-- CSS is now one level up in the hierarchy -->
-    <link rel="stylesheet" href="../Assets/mainstyle/global.css">
-    <style>
-        .register-box {
-            height: auto;
-            padding-bottom: 40px;
-        }
-    </style>
-</head>
+<?php
+require_once "../Include/header.php";
+?>
 
-<body>
-    <div class="register-box">
+<body class="body">
+    <div class="login-container">
         <h2>Register</h2>
 
         <?php if (!empty($errors)): ?>
@@ -137,9 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <button class="register_button" type="submit">Register</button>
         </form>
 
-        <p style="margin-top: 15px; text-align: center;">
-            <a href="login.php" style="color: #007bff; text-decoration: none;">Already have an account? Login here</a>
-        </p>
+        <p>Already have an account? <a href="login.php">Login</a></p>
     </div>
 </body>
 

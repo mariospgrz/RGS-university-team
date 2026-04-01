@@ -1,14 +1,17 @@
 <?php
-
 require_once "../Include/header.php";
-
-//if(!isset($_SESSION["logged"]) || $_SESSION["logged"] !== true){
-//    header("location: ../login.php");
-//    exit;
-//}
-
 ?>
 
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'User') {
+    header("Location: ../index.php");
+    exit;
+}
+?>
+
+<body class="body">
 <div class="profile-container">
     <h1>My Profile</h1>
 
@@ -35,3 +38,5 @@ require_once "../Include/header.php";
 <?php
 require_once "../Include/footer.php";
 ?>
+
+</body>

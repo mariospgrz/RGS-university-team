@@ -33,11 +33,11 @@
         </div>
     </main>
 
-
+    <?php
+    require_once "./Include/footer.php";
+    ?>
 
 </body>
 
 
-<?php
-require_once "./Include/footer.php";
-?>
+

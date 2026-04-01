@@ -16,4 +16,3 @@
     <link rel="stylesheet" href="/Assets/mainstyle/global.css">
 </head>
 
-<body></body>
