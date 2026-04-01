@@ -15,5 +15,5 @@ VALUES ('1' , 'President'),
 ('2' , 'Member of Parliament'),
 ('3' , 'Member of European parliament');
 
-INSERT INTO govOfficers(user_id , officer_position)
-VALUES('3' , '1');
+INSERT INTO govOfficers(user_id, officer_id, officer_position)
+VALUES('3' , '1' , '1');
