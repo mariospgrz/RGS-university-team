@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Πόθεν Έσχες System</title>
+    <meta charset="UTF-8">
+    <title>Πόθεν Έσχες System</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..700&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
 
-  <link rel="stylesheet" href="./Assets/mainstyle/global.css">
+    <link rel="stylesheet" href="./Assets/mainstyle/global.css">
 </head>
 
 <body class="landing-page">
 
-<header class="landing-header">
-  <h1>ΠΟΘΕΝ ΕΣΧΕΣ</h1>
-  <p>Online Declaration Management System</p>
-</header>
+    <header class="landing-header">
+        <h1>ΠΟΘΕΝ ΕΣΧΕΣ</h1>
+        <p>Online Declaration Management System</p>
+    </header>
 
-<main class="landing-content">
-  <p>
-    Welcome to the official platform for submitting and managing
-    asset declarations.
-  </p>
+    <main class="landing-content">
+        <p>
+            Welcome to the official platform for submitting and managing
+            asset declarations.
+        </p>
 
-  <div class="landing-buttons">
-    <a href="login.php" class="btn primary-btn">Login</a>
-    <a href="#" class="btn secondary-btn">Register</a>
-  </div>
-</main>
+        <div class="landing-buttons">
+            <a href="auth/login.php" class="btn primary-btn">Login</a>
+            <a href="auth/register.php" class="btn secondary-btn">Register</a>
+        </div>
+    </main>
 
+    <?php
+    require_once "./Include/footer.php";
+    ?>
 
-<?php
-require_once "./Include/footer.php";
-?>
+</body>
+
 
 
