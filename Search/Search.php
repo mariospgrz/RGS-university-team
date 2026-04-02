@@ -1,4 +1,10 @@
 <?php
+/* NAME: Search.php
+ * DESCRIPTION: This page allows users to search for politicians by name || position and view their submissions.
+ * v0.2 Under development -> submission buttons
+ * This php serves as the List.php for the Second Milestone.
+ * The thematic feature is the submissions and the Search of the politicians using the database(db.php)
+ */
 session_start();
 
 require_once "../Include/db.php";
@@ -13,7 +19,7 @@ $results = [];
 $keyword = '';
 
 if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['keyword'])) {
-    $keyword = trim($_GET['keyword']);
+    $keyword = trim($_GET['keyword']); /*Get the keyword from the search form */
 
     if ($keyword === '') {
         $errors[] = "***Πρέπει να εισάγετε όνομα, επώνυμο ή θέση για αναζήτηση.";

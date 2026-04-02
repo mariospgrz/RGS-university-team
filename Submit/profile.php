@@ -10,10 +10,9 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'User') {
     exit;
 }
 ?>
-<head> <link rel="stylesheet" href="../Assets/css/bodyblocker.css"> </head>
-
-<head>
-    <link rel="stylesheet" href="../Assets/css/navbar-sticky.css">
+<head> 
+    <link rel="stylesheet" href="../Assets/css/bodyblocker.css"> <!-- Must for the navbar to work properly -->
+    <link rel="stylesheet" href="../Assets/css/navbar-sticky.css"> 
 </head>
 
 <body class="body">
