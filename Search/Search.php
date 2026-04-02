@@ -10,31 +10,35 @@ if (!isset($_SESSION['user_id']) || ($_SESSION['role'] ?? '') !== 'User') {
 
 $errors = [];
 $results = [];
-$search_query = '';
+$keyword = '';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $search_query = trim($_POST['search_query'] ?? '');
+if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['keyword'])) {
+    $keyword = trim($_GET['keyword']);
 
-    if ($search_query === '') {
-        $errors[] = "Πρέπει να εισάγετε όνομα, επώνυμο ή θέση για αναζήτηση.";
+    if ($keyword === '') {
+        $errors[] = "***Πρέπει να εισάγετε όνομα, επώνυμο ή θέση για αναζήτηση.";
     } else {
         $sql = "
-            SELECT DISTINCT first_name, last_name, 'Politician' AS position
-            FROM users
+            SELECT DISTINCT users.user_id, first_name, last_name, positions.position_name AS position
+            FROM users 
+            JOIN positions ON users.position_id = positions.position_id
             WHERE role = 'Politician'
-            AND (first_name LIKE :query OR last_name LIKE :query)
+            AND (first_name LIKE :key1 OR last_name LIKE :key2)
 
             UNION
 
-            SELECT DISTINCT users.first_name, users.last_name, positions.position_name AS position
+            SELECT DISTINCT users.user_id, users.first_name, users.last_name, positions.position_name AS position
             FROM users
-            JOIN govofficers ON users.user_id = govofficers.user_id
-            JOIN positions ON govofficers.officer_position = positions.position_id
-            WHERE positions.position_name LIKE :query
+            JOIN positions ON users.position_id = positions.position_id
+            WHERE positions.position_name LIKE :key3
         ";
 
         $stmt = $pdo->prepare($sql);//prepare statement
-        $stmt->execute(['query' => '%' . $search_query . '%']);
+        $stmt->execute([
+            'key1' => '%' . $keyword . '%',
+            'key2' => '%' . $keyword . '%',
+            'key3' => '%' . $keyword . '%'
+        ]);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
@@ -42,135 +46,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <?php require_once "../Include/header.php"; ?>
-<style>
-#search-page {
-    display: block;
-    justify-content: initial;
-    align-items: initial;
-    height: auto;
-}
-
-#search-page .top-navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 24px;
-    background: #1e3a8a;
-    color: #fff;
-}
-
-#search-page .navbar-brand {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-#search-page .navbar-links {
-    list-style: none;
-    display: flex;
-    gap: 16px;
-    margin: 0;
-    padding: 0;
-    align-items: center;
-}
-
-#search-page .navbar-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-#search-page .navbar-links a.active {
-    text-decoration: underline;
-}
-
-#search-page .logout-btn {
-    background: #2563eb;
-    padding: 8px 14px;
-    border-radius: 8px;
-}
-
-#search-page .main-content {
-    max-width: 1100px;
-    margin: 28px auto !important;
-    padding: 0 20px !important;
-}
-
-#search-page .search-form {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 10px;
-    width: 100%;
-}
-
-#search-page .search-form input {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-}
-
-#search-page .search-form button {
-    white-space: nowrap;
-    box-sizing: border-box;
-}
-
-#search-page .search-form input,
-#search-page .search-form button {
-    height: 44px;
-    border-radius: 8px;
-    border: 1px solid #cfcfcf;
-    font-size: 1rem;
-    padding: 0 12px;
-}
-
-#search-page .search-form button {
-    background: #1677ff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-#search-page .results-grid {
-    margin-top: 18px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 14px;
-}
-
-#search-page .result-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 14px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-</style>
+<head>
+    <link rel="stylesheet" href="../Assets/css/navbar-sticky.css">
+    <link rel="stylesheet" href="../Assets/css/searchpage.css">
+</head>
 
 <body id="search-page" class="search-page">
-    <nav class="top-navbar">
-        <div class="navbar-brand">Πόθεν Έσχες</div>
-        <ul class="navbar-links">
-            <li><a href="../Submit/UserDashBoard.php">Dashboard</a></li>
-            <li><a href="../Search/Search.php" class="active">Αναζήτηση</a></li>
-            <li><a href="../index.php" class="logout-btn">Logout</a></li>
-        </ul>
-    </nav>
-
+    <?php require_once "../Include/dashboard_navbar.php"; ?>
     <main class="main-content">
         <section class="page-header">
-            <h1>Αναζητηση</h1>
+            <h1>Search for a politician's submissions</h1>
         </section>
 
         <section class="search-section">
-            <form method="POST" action="" class="search-form">
+            <form method="GET" action="" class="search-form">
                 <input
                     type="text"
-                    name="search_query"
-                    placeholder="Αναζητησε πολιτικους"
-                    value="<?php echo htmlspecialchars($search_query); ?>"
+                    name="keyword"
+                    placeholder="Search politicians"
+                    value="<?php echo htmlspecialchars($keyword); ?>"
                 >
-                <button type="submit">Αναζήτηση</button>
+                <button type="submit">Search</button>
             </form>
 
             <?php if (!empty($errors)): ?>
@@ -181,14 +77,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 </div>
             <?php endif; ?>
 
-            <?php if ($_SERVER["REQUEST_METHOD"] === "POST" && empty($errors)): ?>
-                <div class="results-grid">
+            <?php if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['keyword']) && empty($errors)): ?>
+                <div class="search-results">
                     <?php if (!empty($results)): ?>
+                        <div class="result-header">
+                            <div class="result-cell">First Name</div>
+                            <div class="result-cell">Last Name</div>
+                            <div class="result-cell">Position</div>
+                            <div class="result-cell">Submissions</div>
+                        </div>
                         <?php foreach ($results as $row): ?>
-                            <article class="result-card">
-                                <h3><?php echo htmlspecialchars($row['first_name'] . ' ' . $row['last_name']); ?></h3>
-                                <p><?php echo htmlspecialchars($row['position']); ?></p>
-                            </article>
+                            <div class="result-row">
+                                <div class="result-cell"><?php echo htmlspecialchars($row['first_name']); ?></div>
+                                <div class="result-cell"><?php echo htmlspecialchars($row['last_name']); ?></div>
+                                <div class="result-cell"><?php echo htmlspecialchars($row['position']); ?></div>
+                                <div class="result-actions">
+                                     <!-- Needs to be linked into the submissions of the exact politican without 
+                                      exploiting the user_id in the url(NOT YET IMPLEMENTED)-->
+                                    <a class="view-btn">View Submissions</a>
+                                </div>
+                            </div>
                         <?php endforeach; ?>
                     <?php else: ?>
                         <p class="no-results">Δεν βρέθηκαν αποτελέσματα.</p>
