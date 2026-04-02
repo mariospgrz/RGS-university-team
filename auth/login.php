@@ -38,8 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <?php
- include_once "../Include/header.php";
+include_once "../Include/header.php";
 ?>
+
 <body>
     <div class="login-container">
         <h2>Login</h2>
@@ -57,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <form action="login.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter your username"
-                   value="<?= htmlspecialchars($_POST['username'] ?? '') ?>" required>
+                value="<?= htmlspecialchars($_POST['username'] ?? '') ?>" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
