@@ -13,6 +13,5 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="/Assets/mainstyle/global.css">
+    <link rel="stylesheet" href="../Assets/mainstyle/global.css">
 </head>
-
