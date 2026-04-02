@@ -20,12 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if ($user['role'] === 'Admin') {
                 header("Location: ../Admin/Admin.php");
+                exit;
             }
             if ($user['role'] === 'User') {
-                header("Location: ../Submit/UserDashboard.php");
+                header("Location: ../Search/Search.php");
+                exit;
             }
             if ($user['role'] === 'Politician') {
                 header("Location: ../index.php");
+                exit;
             }
             exit;
         } else {
