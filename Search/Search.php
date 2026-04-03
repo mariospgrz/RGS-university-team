@@ -9,7 +9,7 @@ session_start();
 
 require_once "../Include/db.php";
 
-if (!isset($_SESSION['user_id']) || ($_SESSION['role'] ?? '') !== 'User') {
+if (!isset($_SESSION['user_id']) || (($_SESSION['role'] ?? '') !== 'User' && ($_SESSION['role'] ?? '') !== 'Politician')) {
     header("Location: ../index.php");
     exit;
 }
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['keyword'])) {
             SELECT DISTINCT users.user_id, users.first_name, users.last_name, positions.position_name AS position
             FROM users
             JOIN positions ON users.position_id = positions.position_id
-            WHERE positions.position_name LIKE :key3
+            WHERE positions.position_name LIKE :key3 AND role = 'Politician'
         ";
 
         $stmt = $pdo->prepare($sql);//prepare statement

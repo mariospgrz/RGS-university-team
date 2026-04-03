@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 exit;
             }
             if ($user['role'] === 'Politician') {
-                header("Location: ../index.php");
+                header("Location: ../Search/Search.php");
                 exit;
             }
             exit;
