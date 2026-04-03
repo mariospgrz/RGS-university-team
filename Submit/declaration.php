@@ -22,9 +22,12 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'User') {
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..700&family=Quicksand:wght@300..700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <style>
+        body {
+            font-family: 'DejaVu Sans', sans-serif !important;
+        }
         :root { --primary-color: #2c3e50; --accent-color: #3498db; --danger: #e74c3c; --success: #27ae60; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.5; color: #333; max-width: 1000px; margin: 40px auto; padding: 40px; border: 1px solid #ddd; background-color: #fff; }
 
@@ -57,7 +60,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'User') {
         }
     </style>
 </head>
-<body>
+<body class="body">
 
 <div class="sticky-nav">
     <script src="../Include/save_pdf.js"></script>

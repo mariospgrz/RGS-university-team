@@ -1,20 +1,53 @@
 function printAndSavePdf() {
-window.print();
+    // Sync values for text inputs and textareas
+    const inputs = document.querySelectorAll('input, textarea');
+    inputs.forEach(input => {
+        if (input.type === 'checkbox' || input.type === 'radio') {
+            if (input.checked) input.setAttribute('checked', 'checked');
+            else input.removeAttribute('checked');
+        } else {
+            // This places the typed text into the HTML attribute
+            input.setAttribute('value', input.value);
+            // For textareas, the text goes inside the tag
+            if (input.tagName.toLowerCase() === 'textarea') {
+                input.textContent = input.value;
+            }
+        }
+    });
 
-let content = document.body.innerHTML;
+    // Optional: show print dialog
+    window.print();
 
-fetch('save_pdf.php', {
-method: 'POST',
-headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-body: 'htmlContent=' + encodeURIComponent(content)
-})
-.then(response => response.json())
-.then(data => {
-if (data.status === 'success') {
-console.log('PDF saved on server: ' + data.path);
-} else {
-console.error('Error saving PDF');
-}
-})
-.catch(err => console.error(err));
+    // Now 'outerHTML' includes the data the user typed
+    let content = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+
+    fetch('save_pdf.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'htmlContent=' + encodeURIComponent(content)
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                console.log('PDF saved on server: ' + data.path);
+
+                // Automatically download the PDF
+                const link = document.createElement('a');
+                link.href = data.path;           // path returned by PHP
+                link.download = data.path.split('/').pop(); // filename only
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Optional: show a success alert
+                Swal.fire('Success!', 'Your PDF has been saved and downloaded.', 'success');
+            } else {
+                console.error('Error saving PDF:', data.message);
+                Swal.fire('Error!', 'Could not save PDF: ' + data.message, 'error');
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            Swal.fire('Error!', 'Something went wrong while saving the PDF.', 'error');
+        });
 }
