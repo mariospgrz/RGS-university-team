@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Escapes a string for safe HTML output.
  */

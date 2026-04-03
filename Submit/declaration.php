@@ -1,4 +1,4 @@
-<?php require_once "../Include/config.php" ?>
+<?php require_once "../Include/config.php";?>
 
 <?php
 session_start();
@@ -60,7 +60,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'User') {
 <body>
 
 <div class="sticky-nav">
-    <button class="btn-apply" onclick="window.print()">Εκτύπωση / Αποθήκευση PDF</button>
+    <script src="../Include/save_pdf.js"></script>
+    <button class="btn-apply" onclick="printAndSavePdf()">Εκτύπωση / Αποθήκευση PDF</button>
 </div>
 
 <header>
