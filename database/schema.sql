@@ -17,7 +17,7 @@ email varchar(100) unique,
 Phone varchar(8) unique,
 created_at timestamp default current_timestamp,
 position_id int DEFAULT '999', /*999 for citizens*/
-role enum('Admin' , 'User', 'Politician')
+role enum('Admin' , 'User', 'Politician'),
 foreign key (position_id) references positions(position_id));
 
 CREATE TABLE accounts(
