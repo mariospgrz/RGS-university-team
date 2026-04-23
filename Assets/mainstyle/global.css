@@ -96,7 +96,7 @@ button:hover {
     padding: 30px;
     width: 150px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     color: #333;
     transition: 0.3s;
 }
@@ -118,7 +118,7 @@ button:hover {
     background-color: white;
     padding: 30px 40px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     width: 450px;
     text-align: center;
 }
@@ -167,62 +167,102 @@ button:hover {
 
 
 
+body.admin-page {
+    display: block;
+    height: auto;
+    min-height: 100vh;
+    justify-content: unset;
+    align-items: unset;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
 .admin-container {
     display: flex;
+    flex-direction: column;
     min-height: 100vh;
     width: 100%;
-    align-self: stretch;
 }
 
 .sidebar {
-    width: 250px;
+    width: 100%;
     background-color: #333;
     color: white;
     display: flex;
-    flex-direction: column;
-    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap;
+    gap: 10px;
+    box-sizing: border-box;
 }
 
 .sidebar h2 {
-    text-align: center;
-    margin-bottom: 30px;
     color: #fff;
-    margin-top: 0;
+    margin: 0;
+    padding: 15px 0;
+    font-size: 1.1em;
+    white-space: nowrap;
+    margin-right: 10px;
 }
 
 .sidebar p {
-    text-align: center;
     color: #ccc;
-    font-size: 0.9em;
-    margin-bottom: 20px;
+    font-size: 0.85em;
+    margin: 0;
+    padding: 0 10px;
+    border-left: 1px solid #555;
+    white-space: nowrap;
+}
+
+.sidebar nav {
+    flex: 1;
+    display: flex;
 }
 
 .sidebar nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
     width: 100%;
 }
 
 .sidebar nav ul li {
-    margin-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.sidebar nav ul li:last-child {
+    margin-left: auto;
 }
 
 .sidebar nav ul li a {
     color: white;
     text-decoration: none;
     display: block;
-    padding: 12px;
+    padding: 10px 16px;
     border-radius: 4px;
     transition: background 0.2s;
+    white-space: nowrap;
+    font-size: 0.95em;
 }
 
 .sidebar nav ul li a:hover {
     background-color: #444;
 }
 
+.sidebar nav ul li a.nav-active {
+    background-color: #007bff;
+}
+
 .sidebar nav ul li a.logout-btn {
     background-color: #007bff;
-    margin-top: 20px;
+    margin-top: 0;
+    margin-left: 0;
     text-align: center;
 }
 
@@ -317,12 +357,12 @@ button:hover {
 
 /* Register Page */
 .register-box {
-    background:white;
-    padding:30px;
-    border-radius:8px;
-    width:320px;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-    text-align:center;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 320px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h2 {
@@ -330,11 +370,11 @@ h2 {
 }
 
 .register_input {
-    width:90%;
-    padding:10px;
-    margin:8px 0;
-    border-radius:5px;
-    border:1px solid #ccc;
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .register_button {
@@ -367,7 +407,8 @@ h2 {
 /* Container to place logout under cards */
 .logout-container {
     margin-top: 30px;
-    text-align: center; /* center button horizontally */
+    text-align: center;
+    /* center button horizontally */
 }
 
 /* Logout button styled like a card */
@@ -380,7 +421,7 @@ h2 {
     padding: 20px 40px;
     font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     display: inline-block;
 }
@@ -388,5 +429,5 @@ h2 {
 .logout-btn:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
