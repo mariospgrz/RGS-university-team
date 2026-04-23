@@ -4,7 +4,7 @@
 $host = '127.0.0.1';
 $dbname = 'pothenesxes';
 $dbusername = 'root';
-$dbpassword = 'Password1.';
+$dbpassword = '';
 
 // PDO με ATTR_ERRMODE = ERRMODE_EXCEPTION και ATTR_DEFAULT_FETCH_MODE = FETCH_ASSOC
 $options = [

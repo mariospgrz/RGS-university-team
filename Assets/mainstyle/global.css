@@ -47,7 +47,7 @@ button {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #17324d;
     color: white;
     font-family: "Quicksand", sans-serif;
     font-size: 16px;
@@ -55,7 +55,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #1c5a7b;
     transform: translateY(-2px);
 }
 
@@ -108,7 +108,7 @@ button:hover {
 }
 
 .user-dashboard-card:hover {
-    background-color: #007bff;
+    background-color: #1c5a7b;
     color: white;
     transform: translateY(-2px);
 }
@@ -138,7 +138,7 @@ button:hover {
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #17324d;
     color: white;
     font-size: 14px;
     cursor: pointer;
@@ -146,7 +146,7 @@ button:hover {
 }
 
 #newDeclaration:hover {
-    background-color: #0056b3;
+    background-color: #1c5a7b;
 }
 
 #declarationsList button {
@@ -256,18 +256,18 @@ body.admin-page {
 }
 
 .sidebar nav ul li a.nav-active {
-    background-color: #007bff;
+    background-color: #1c5a7b;
 }
 
 .sidebar nav ul li a.logout-btn {
-    background-color: #007bff;
+    background-color: #17324d;
     margin-top: 0;
     margin-left: 0;
     text-align: center;
 }
 
 .sidebar nav ul li a.logout-btn:hover {
-    background-color: #0056b3;
+    background-color: #1c5a7b;
 }
 
 .main-content {
@@ -288,7 +288,7 @@ body.admin-page {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    background: linear-gradient(to right, #17324d, #1c5a7b);
     color: white;
     text-align: center;
 }
@@ -327,7 +327,7 @@ body.admin-page {
 /* Primary button */
 .primary-btn {
     background-color: white;
-    color: #1e3c72;
+    color: #17324d;
 }
 
 .primary-btn:hover {
@@ -342,7 +342,7 @@ body.admin-page {
 
 .secondary-btn:hover {
     background-color: white;
-    color: #1e3c72;
+    color: #17324d;
 }
 
 /* Footer */
@@ -379,7 +379,7 @@ h2 {
 .register_button {
     width: 100%;
     padding: 10px;
-    background: #007BFF;
+    background: #17324d;
     color: white;
     border: none;
     border-radius: 5px;
@@ -387,7 +387,7 @@ h2 {
 }
 
 .register_button:hover {
-    background: #0056b3;
+    background: #1c5a7b;
 }
 
 .profile-container {
@@ -413,7 +413,7 @@ h2 {
 /* Logout button styled like a card */
 .logout-btn {
 
-    background-color: #007BFF;
+    background-color: #17324d;
     color: white;
     border: none;
     border-radius: 10px;
@@ -426,7 +426,7 @@ h2 {
 }
 
 .logout-btn:hover {
-    background-color: #0056b3;
+    background-color: #1c5a7b;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }

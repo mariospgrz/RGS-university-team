@@ -30,7 +30,7 @@ $activePage = 'configure';
         .add-form { display:flex; flex-direction:column; gap:10px; margin-bottom:20px; }
         .add-form-row { display:flex; gap:10px; }
         .add-form input { flex:1; padding:9px 12px; border:1px solid #ddd; border-radius:6px; font-family:'Quicksand',sans-serif; font-size:.9em; }
-        .add-form input:focus { outline:none; border-color:#007bff; }
+        .add-form input:focus { outline:none; border-color:#17324d; }
         .btn-add { background:#27ae60; color:#fff; border:none; padding:9px 18px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; white-space:nowrap; transition:.2s; }
         .btn-add:hover { background:#1e8449; }
 
@@ -38,7 +38,7 @@ $activePage = 'configure';
         .item-list { display:flex; flex-direction:column; gap:10px; }
         .item-row { display:flex; align-items:center; justify-content:space-between; padding:12px 16px; background:#f8f9fa; border-radius:8px; border:1px solid #e9ecef; }
         .item-left { display:flex; align-items:center; gap:12px; }
-        .item-icon { width:28px; height:28px; background:#007bff; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.78em; font-weight:700; flex-shrink:0; }
+        .item-icon { width:28px; height:28px; background:#17324d; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.78em; font-weight:700; flex-shrink:0; }
         .item-name { font-weight:600; color:#333; }
         .item-sub  { font-size:.82em; color:#888; margin-top:2px; }
         .btn-del { background:#e74c3c; color:#fff; border:none; padding:12px 16px; border-radius:4px; cursor:pointer; font-size:.8em; font-family:'Quicksand',sans-serif; transition:.2s; }

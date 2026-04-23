@@ -22,14 +22,14 @@ require "../Include/db.php";
         .page-header h1 { margin:0 0 4px; font-size:1.6em; color:#2c2c2c; text-align:left; }
         .page-header p  { margin:0; color:#888; font-size:.9em; }
 
-        .btn-primary   { background:#007bff; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; transition:.2s; }
-        .btn-primary:hover   { background:#0056b3; transform:translateY(-1px); }
+        .btn-primary   { background:#17324d; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; transition:.2s; }
+        .btn-primary:hover   { background:#1c5a7b; transform:translateY(-1px); }
         .btn-secondary { background:#6c757d; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; }
         .btn-secondary:hover { background:#545b62; }
 
         .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:24px; }
         .stat-card  { background:#fff; border-radius:10px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,.07); border-left:4px solid #ccc; }
-        .stat-card.blue   { border-left-color:#007bff; }
+        .stat-card.blue   { border-left-color:#17324d; }
         .stat-card.green  { border-left-color:#27ae60; }
         .stat-card.orange { border-left-color:#e67e22; }
         .stat-value { font-size:2em; font-weight:700; color:#2c2c2c; }
@@ -37,7 +37,7 @@ require "../Include/db.php";
 
         .search-bar { margin-bottom:16px; }
         .search-bar input { padding:10px 14px; border:1px solid #ddd; border-radius:6px; font-family:'Quicksand',sans-serif; font-size:.9em; width:320px; box-sizing:border-box; }
-        .search-bar input:focus { outline:none; border-color:#007bff; }
+        .search-bar input:focus { outline:none; border-color:#17324d; }
 
         .table-card { background:#fff; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.07); overflow:hidden; }
         table   { width:100%; border-collapse:collapse; font-size:.9em; }
@@ -76,7 +76,7 @@ require "../Include/db.php";
         .form-group input,
         .form-group select { padding:9px 11px; border:1px solid #ddd; border-radius:6px; font-family:'Quicksand',sans-serif; font-size:.9em; }
         .form-group input:focus,
-        .form-group select:focus { outline:none; border-color:#007bff; }
+        .form-group select:focus { outline:none; border-color:#17324d; }
         .form-group small { color:#999; font-size:.78em; }
     </style>
 </head>

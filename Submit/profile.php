@@ -120,12 +120,13 @@ $stmt = $pdo->prepare("
 $stmt->execute(['id' => $user_id]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $profile_picture = $user['profile_picture'] ?? '../Assets/media/profile_placeholder.png';
+$navbar_css_version = @filemtime(__DIR__ . '/../Assets/css/navbar-sticky.css') ?: time();
 require_once "../Include/header.php";
 ?>
 
 <head>
     <link rel="stylesheet" href="../Assets/css/bodyblocker.css">
-    <link rel="stylesheet" href="../Assets/css/navbar-sticky.css">
+    <link rel="stylesheet" href="../Assets/css/navbar-sticky.css?v=<?php echo $navbar_css_version; ?>">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
@@ -159,7 +160,7 @@ require_once "../Include/header.php";
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #2563eb;
+            color: #17324d;
         }
 
         .profile-title {
@@ -320,8 +321,8 @@ require_once "../Include/header.php";
 
         .profile-input:focus {
             outline: none;
-            border-color: #2563eb;
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+            border-color: #17324d;
+            box-shadow: 0 0 0 4px rgba(23, 50, 77, 0.12);
         }
 
         .profile-input-readonly {
@@ -372,14 +373,14 @@ require_once "../Include/header.php";
         }
 
         .profile-primary-btn {
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            background: linear-gradient(135deg, #17324d, #1c5a7b);
             color: #ffffff;
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.18);
+            box-shadow: 0 10px 20px rgba(23, 50, 77, 0.18);
         }
 
         .profile-primary-btn:hover {
             transform: translateY(-1px);
-            box-shadow: 0 14px 24px rgba(37, 99, 235, 0.22);
+            box-shadow: 0 14px 24px rgba(23, 50, 77, 0.22);
         }
 
         .profile-secondary-btn {

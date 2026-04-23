@@ -25,7 +25,7 @@ $currentYear = (int)date('Y');
 
         .kpi-row { display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:24px; }
         .kpi-card { background:#fff; border-radius:10px; padding:18px; box-shadow:0 2px 8px rgba(0,0,0,.07); border-left:4px solid #ccc; }
-        .kpi-card.blue   { border-left-color:#007bff; }
+        .kpi-card.blue   { border-left-color:#17324d; }
         .kpi-card.yellow { border-left-color:#f39c12; }
         .kpi-card.green  { border-left-color:#27ae60; }
         .kpi-card.red    { border-left-color:#e74c3c; }
@@ -38,9 +38,9 @@ $currentYear = (int)date('Y');
             padding:9px 12px; border:1px solid #ddd; border-radius:6px;
             font-family:'Quicksand',sans-serif; font-size:.9em; background:#fff;
         }
-        .filters select:focus, .filters input:focus { outline:none; border-color:#007bff; }
-        .btn-filter { background:#007bff; color:#fff; border:none; padding:9px 18px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; transition:.2s; }
-        .btn-filter:hover { background:#0056b3; }
+        .filters select:focus, .filters input:focus { outline:none; border-color:#17324d; }
+        .btn-filter { background:#17324d; color:#fff; border:none; padding:9px 18px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; transition:.2s; }
+        .btn-filter:hover { background:#1c5a7b; }
 
         .table-card { background:#fff; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.07); overflow:hidden; margin-bottom:24px; }
         .table-card-header { padding:14px 20px; border-bottom:1px solid #f0f0f0; font-weight:600; color:#555; font-size:.95em; }
@@ -87,9 +87,9 @@ $currentYear = (int)date('Y');
         .form-group   { display:flex; flex-direction:column; gap:5px; }
         .form-group label { font-size:.83em; font-weight:600; color:#555; }
         .form-group select, .form-group textarea { padding:9px 11px; border:1px solid #ddd; border-radius:6px; font-family:'Quicksand',sans-serif; font-size:.9em; }
-        .form-group select:focus, .form-group textarea:focus { outline:none; border-color:#007bff; }
-        .btn-save { background:#007bff; color:#fff; border:none; padding:9px 18px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; transition:.2s; }
-        .btn-save:hover { background:#0056b3; }
+        .form-group select:focus, .form-group textarea:focus { outline:none; border-color:#17324d; }
+        .btn-save { background:#17324d; color:#fff; border:none; padding:9px 18px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; transition:.2s; }
+        .btn-save:hover { background:#1c5a7b; }
         .btn-cancel { background:#6c757d; color:#fff; border:none; padding:9px 18px; border-radius:6px; cursor:pointer; font-family:'Quicksand',sans-serif; font-weight:600; font-size:.9em; }
         .btn-cancel:hover { background:#545b62; }
     </style>

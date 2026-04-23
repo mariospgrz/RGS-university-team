@@ -43,7 +43,7 @@ $activePage = 'reports';
 
         .kpi-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:28px; }
         .kpi-card { background:#fff; border-radius:10px; padding:22px; box-shadow:0 2px 8px rgba(0,0,0,.07); text-align:center; border-top:4px solid #ccc; }
-        .kpi-card.blue   { border-top-color:#007bff; }
+        .kpi-card.blue   { border-top-color:#17324d; }
         .kpi-card.green  { border-top-color:#27ae60; }
         .kpi-card.orange { border-top-color:#e67e22; }
         .kpi-card.purple { border-top-color:#8e44ad; }
@@ -132,7 +132,7 @@ $activePage = 'reports';
     </main>
 </div>
 <script>
-const roleColors = ['#007bff','#27ae60','#e67e22','#8e44ad','#e74c3c'];
+const roleColors = ['#17324d','#27ae60','#e67e22','#8e44ad','#e74c3c'];
 
 new Chart(document.getElementById('roleChart'), {
     type: 'doughnut',
@@ -150,7 +150,7 @@ new Chart(document.getElementById('posChart'), {
         datasets: [{
             label: 'Αξιωματούχοι',
             data: <?= $posCounts ?>,
-            backgroundColor: '#007bff',
+            backgroundColor: '#17324d',
             borderRadius: 6
         }]
     },

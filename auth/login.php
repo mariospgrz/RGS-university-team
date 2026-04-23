@@ -207,7 +207,7 @@ include_once "../Include/header.php";
         .eyebrow {
             display: block;
             margin-bottom: 6px;
-            color: #1c5a7b;
+            color: #17324d;
             font-size: 12px;
             font-weight: 800;
             letter-spacing: 0;
@@ -285,9 +285,9 @@ include_once "../Include/header.php";
 
         .field input:focus {
             outline: none;
-            border-color: #1c5a7b;
+            border-color: #17324d;
             background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(28, 90, 123, 0.12);
+            box-shadow: 0 0 0 4px rgba(23, 50, 77, 0.12);
         }
 
         .login-submit {
@@ -296,7 +296,7 @@ include_once "../Include/header.php";
             margin-top: 6px;
             border: 0;
             border-radius: 8px;
-            background: #1c5a7b;
+            background: #17324d;
             color: #ffffff;
             display: inline-flex;
             align-items: center;
@@ -309,9 +309,9 @@ include_once "../Include/header.php";
         }
 
         .login-submit:hover {
-            background: #174963;
+            background: #1c5a7b;
             transform: translateY(-1px);
-            box-shadow: 0 12px 22px rgba(28, 90, 123, 0.22);
+            box-shadow: 0 12px 22px rgba(23, 50, 77, 0.22);
         }
 
         .login-submit .material-icons {
@@ -326,7 +326,7 @@ include_once "../Include/header.php";
         }
 
         .register-link a {
-            color: #1c5a7b;
+            color: #17324d;
             font-weight: 800;
             text-decoration: none;
         }
