@@ -15,9 +15,9 @@ try {
 
         case 'list_positions':
             $stmt = $pdo->query(
-                "SELECT p.position_id, p.position_name, COUNT(g.user_id) AS officer_count
+                "SELECT p.position_id, p.position_name, COUNT(u.user_id) AS officer_count
                  FROM positions p
-                 LEFT JOIN govOfficers g ON p.position_id = g.officer_position
+                 LEFT JOIN users u ON p.position_id = u.position_id
                  GROUP BY p.position_id, p.position_name
                  ORDER BY p.position_id"
             );
@@ -39,14 +39,49 @@ try {
             $id = (int)($_POST['position_id'] ?? 0);
             if (!$id) { echo json_encode(['success' => false, 'error' => 'Μη έγκυρη θέση']); break; }
 
-            $inUse = $pdo->prepare("SELECT COUNT(*) FROM govOfficers WHERE officer_position=?");
+            $inUse = $pdo->prepare("SELECT COUNT(*) FROM users WHERE position_id=?");
             $inUse->execute([$id]);
             if ($inUse->fetchColumn() > 0) {
-                echo json_encode(['success' => false, 'error' => 'Δεν μπορείτε να διαγράψετε θέση που χρησιμοποιείται από αξιωματούχο']);
+                echo json_encode(['success' => false, 'error' => 'Δεν μπορείτε να διαγράψετε θέση που χρησιμοποιείται από κάποιο χρήστη']);
                 break;
             }
             $pdo->prepare("DELETE FROM positions WHERE position_id=?")->execute([$id]);
             echo json_encode(['success' => true, 'message' => 'Η θέση διαγράφηκε επιτυχώς']);
+            break;
+
+        case 'list_parties':
+            $stmt = $pdo->query(
+                "SELECT p.party_id, p.party_name, p.party_acronym, COUNT(u.user_id) AS user_count
+                 FROM parties p
+                 LEFT JOIN users u ON p.party_id = u.party_id
+                 GROUP BY p.party_id, p.party_name, p.party_acronym
+                 ORDER BY p.party_name"
+            );
+            echo json_encode(['success' => true, 'parties' => $stmt->fetchAll()]);
+            break;
+
+        case 'add_party':
+            $name = trim($_POST['party_name'] ?? '');
+            $acr  = trim($_POST['party_acronym'] ?? '');
+            if (!$name) { echo json_encode(['success' => false, 'error' => 'Συμπληρώστε όνομα κόμματος']); break; }
+            
+            $pdo->prepare("INSERT INTO parties (party_name, party_acronym) VALUES (?,?)")
+                ->execute([$name, $acr]);
+            echo json_encode(['success' => true, 'message' => 'Το κόμμα προστέθηκε επιτυχώς']);
+            break;
+
+        case 'delete_party':
+            $id = (int)($_POST['party_id'] ?? 0);
+            if (!$id) { echo json_encode(['success' => false, 'error' => 'Μη έγκυρο κόμμα']); break; }
+
+            $inUse = $pdo->prepare("SELECT COUNT(*) FROM users WHERE party_id=?");
+            $inUse->execute([$id]);
+            if ($inUse->fetchColumn() > 0) {
+                echo json_encode(['success' => false, 'error' => 'Δεν μπορείτε να διαγράψετε κόμμα που έχει μέλη']);
+                break;
+            }
+            $pdo->prepare("DELETE FROM parties WHERE party_id=?")->execute([$id]);
+            echo json_encode(['success' => true, 'message' => 'Το κόμμα διαγράφηκε επιτυχώς']);
             break;
 
         default:

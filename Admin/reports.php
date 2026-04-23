@@ -14,8 +14,8 @@ $total_pos      = $pdo->query("SELECT COUNT(*) FROM positions")->fetchColumn();
 // Charts data
 $roles = $pdo->query("SELECT role, COUNT(*) AS cnt FROM users GROUP BY role")->fetchAll();
 $officers_by_pos = $pdo->query(
-    "SELECT p.position_name, COUNT(g.user_id) AS cnt
-     FROM positions p LEFT JOIN govOfficers g ON p.position_id=g.officer_position
+    "SELECT p.position_name, COUNT(u.user_id) AS cnt
+     FROM positions p LEFT JOIN users u ON p.position_id=u.position_id
      GROUP BY p.position_id, p.position_name ORDER BY cnt DESC"
 )->fetchAll();
 

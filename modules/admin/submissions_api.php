@@ -39,9 +39,9 @@ try {
             $stmt = $pdo->prepare(
                 "SELECT u.user_id, u.first_name, u.last_name, u.email, p.position_name
                  FROM users u
-                 JOIN govOfficers g  ON g.user_id = u.user_id
-                 LEFT JOIN positions p ON p.position_id = g.officer_position
-                 WHERE u.user_id NOT IN (
+                 LEFT JOIN positions p ON u.position_id = p.position_id
+                 WHERE u.role = 'Politician' 
+                 AND u.user_id NOT IN (
                      SELECT user_id FROM submissions WHERE year = ?
                  )
                  ORDER BY u.last_name"

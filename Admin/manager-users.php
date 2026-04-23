@@ -51,6 +51,8 @@ $activePage = 'users';
         .role-badge.user       { background:#d1ecf1; color:#0c5460; }
         .role-badge.politician { background:#d4edda; color:#155724; }
 
+        .party-tag { display:inline-block; font-size:.75em; color:#8e44ad; font-weight:600; margin-top:2px; }
+
         .action-cell { display:flex; gap:6px; }
         .btn-edit   { background:#17a2b8; color:#fff; border:none; padding:5px 11px; border-radius:4px; cursor:pointer; font-size:.8em; font-family:'Quicksand',sans-serif; transition:.2s; }
         .btn-edit:hover { background:#117a8b; }
@@ -118,7 +120,7 @@ $activePage = 'users';
                 <thead>
                     <tr>
                         <th>#</th><th>Ονοματεπώνυμο</th><th>Email</th><th>Τηλέφωνο</th>
-                        <th>Ρόλος</th><th>Username</th><th>Ενέργειες</th>
+                        <th>Ρόλος / Θέση / Κόμμα</th><th>Username</th><th>Ενέργειες</th>
                     </tr>
                 </thead>
                 <tbody id="usersBody"><tr><td colspan="7" class="empty">Φόρτωση...</td></tr></tbody>
@@ -162,6 +164,24 @@ $activePage = 'users';
                     <input type="password" id="fPw" name="password">
                     <small id="pwHint" style="display:none">Αφήστε κενό για να μη αλλάξει</small>
                 </div>
+                
+                <div id="politicianFields" style="display:none">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Θέση *</label>
+                            <select id="fPosition" name="officer_position">
+                                <!-- Populated by JS -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Κόμμα</label>
+                            <select id="fParty" name="party_id">
+                                <option value="">Χωρίς Κόμμα (Ανεξάρτητος)</option>
+                                <!-- Populated by JS -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="modal-footer">
@@ -173,8 +193,48 @@ $activePage = 'users';
 
 <script>
 let editMode = false;
+let allUsers = []; 
+let positions = [];
+let parties = [];
 
-document.addEventListener('DOMContentLoaded', loadUsers);
+document.addEventListener('DOMContentLoaded', () => {
+    loadAll();
+    document.getElementById('fRole').addEventListener('change', togglePolFields);
+});
+
+function loadAll(){
+    loadUsers();
+    loadPositions();
+    loadParties();
+}
+
+function togglePolFields() {
+    const role = document.getElementById('fRole').value;
+    document.getElementById('politicianFields').style.display = (role === 'Politician') ? 'block' : 'none';
+}
+
+function loadPositions() {
+    fetch('../modules/admin/config_api.php', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:'action=list_positions'})
+    .then(r=>r.json()).then(d => {
+        if(d.success) {
+            positions = d.positions;
+            const sel = document.getElementById('fPosition');
+            sel.innerHTML = positions.map(p => `<option value="${p.position_id}">${esc(p.position_name)}</option>`).join('');
+        }
+    });
+}
+
+function loadParties() {
+    fetch('../modules/admin/config_api.php', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:'action=list_parties'})
+    .then(r=>r.json()).then(d => {
+        if(d.success) {
+            parties = d.parties;
+            const sel = document.getElementById('fParty');
+            const options = parties.map(p => `<option value="${p.party_id}">${esc(p.party_name)} (${esc(p.party_acronym)})</option>`).join('');
+            sel.innerHTML = '<option value="">Χωρίς Κόμμα (Ανεξάρτητος)</option>' + options;
+        }
+    });
+}
 
 function esc(s){ return s==null?'':String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -184,6 +244,7 @@ function loadUsers(){
 }
 
 function renderUsers(users){
+    allUsers = users; 
     document.getElementById('st-total').textContent = users.length;
     document.getElementById('st-users').textContent = users.filter(u=>u.role==='User').length;
     document.getElementById('st-pol').textContent   = users.filter(u=>u.role==='Politician').length;
@@ -191,17 +252,21 @@ function renderUsers(users){
 
     const tb = document.getElementById('usersBody');
     if(!users.length){ tb.innerHTML='<tr><td colspan="7" class="empty">Δεν βρέθηκαν χρήστες</td></tr>'; return; }
-    tb.innerHTML = users.map(u=>`
+    tb.innerHTML = users.map((u, index)=>`
         <tr>
             <td>${esc(u.user_id)}</td>
             <td><strong>${esc(u.first_name)} ${esc(u.last_name)}</strong></td>
             <td>${esc(u.email)}</td>
             <td>${esc(u.Phone||'—')}</td>
-            <td><span class="role-badge ${u.role.toLowerCase()}">${esc(u.role)}</span></td>
+            <td>
+                <span class="role-badge ${u.role.toLowerCase()}">${esc(u.role)}</span>
+                ${u.position_id != 999 ? `<br><small style="color:#555;font-weight:600">${esc(u.position_name)}</small>` : ''}
+                ${u.party_id ? `<br><span class="party-tag">🏛 ${esc(u.party_name)}</span>` : ''}
+            </td>
             <td>${esc(u.username||'—')}</td>
             <td class="action-cell">
-                <button class="btn-edit"   onclick='editUser(${JSON.stringify(u)})'>✏ Επεξ.</button>
-                <button class="btn-delete" onclick="deleteUser(${u.user_id},'${esc(u.first_name)} ${esc(u.last_name)}')">🗑 Διαγρ.</button>
+                <button class="btn-edit"   onclick="editUser(${index})">✏</button>
+                <button class="btn-delete" onclick="deleteUser(${u.user_id},'${esc(u.first_name)} ${esc(u.last_name)}')">🗑</button>
             </td>
         </tr>`).join('');
 }
@@ -219,10 +284,12 @@ function openAddModal(){
     document.getElementById('fPw').required=true;
     document.getElementById('pwLabel').textContent='Κωδικός *';
     document.getElementById('pwHint').style.display='none';
+    togglePolFields();
     document.getElementById('userModal').classList.add('active');
 }
 
-function editUser(u){
+function editUser(index){
+    const u = allUsers[index];
     editMode=true;
     document.getElementById('modalTitle').textContent='Επεξεργασία Χρήστη';
     document.getElementById('fUserId').value=u.user_id;
@@ -236,6 +303,11 @@ function editUser(u){
     document.getElementById('fPw').required=false;
     document.getElementById('pwLabel').textContent='Κωδικός';
     document.getElementById('pwHint').style.display='block';
+    
+    document.getElementById('fPosition').value = u.position_id || '999';
+    document.getElementById('fParty').value    = u.party_id || '';
+    
+    togglePolFields();
     document.getElementById('userModal').classList.add('active');
 }
 
