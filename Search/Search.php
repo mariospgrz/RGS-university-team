@@ -145,7 +145,7 @@ $search_css_version = @filemtime(__DIR__ . '/../Assets/css/searchpage.css') ?: t
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>
-                        <p class="no-results">Δεν βρέθηκαν αποτελέσματα.</p>
+                        <p class="no-results">Δε βρέθηκαν αποτελέσματα.</p>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
@@ -153,4 +153,3 @@ $search_css_version = @filemtime(__DIR__ . '/../Assets/css/searchpage.css') ?: t
     </main>
 </body>
 
-<?php require_once "../Include/footer.php"; ?>

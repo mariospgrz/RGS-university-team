@@ -4,6 +4,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'Admin') {
     header("Location: ../index.php"); exit;
 }
 $activePage = 'users';
+require "../Include/db.php";
 ?>
 <!DOCTYPE html>
 <html lang="el">
@@ -54,9 +55,9 @@ $activePage = 'users';
         .party-tag { display:inline-block; font-size:.75em; color:#8e44ad; font-weight:600; margin-top:2px; }
 
         .action-cell { display:flex; gap:6px; }
-        .btn-edit   { background:#17a2b8; color:#fff; border:none; padding:5px 11px; border-radius:4px; cursor:pointer; font-size:.8em; font-family:'Quicksand',sans-serif; transition:.2s; }
+        .btn-edit   { background:#17a2b8; color:#fff; border:none; padding:8px 11px; border-radius:4px; cursor:pointer; font-size:.8em; font-family:'Quicksand',sans-serif; transition:.2s; }
         .btn-edit:hover { background:#117a8b; }
-        .btn-delete { background:#e74c3c; color:#fff; border:none; padding:5px 11px; border-radius:4px; cursor:pointer; font-size:.8em; font-family:'Quicksand',sans-serif; transition:.2s; }
+        .btn-delete { background:#e74c3c; color:#fff; border:none; padding:8px 12px; border-radius:4px; cursor:pointer; font-size:.8em; font-family:'Quicksand',sans-serif; transition:.2s; }
         .btn-delete:hover { background:#c0392b; }
 
         /* Modal */

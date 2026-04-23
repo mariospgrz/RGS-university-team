@@ -1,7 +1,6 @@
 <?php if (!isset($activePage)) $activePage = ''; ?>
 <aside class="sidebar">
     <h2>Admin</h2>
-    <p>Πόθεν Έσχες</p>
     <nav>
         <ul>
             <li><a href="manager-users.php"<?= $activePage === 'users' ? ' class="nav-active"' : '' ?>>Manage Users</a></li>

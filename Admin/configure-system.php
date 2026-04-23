@@ -41,7 +41,7 @@ $activePage = 'configure';
         .item-icon { width:28px; height:28px; background:#007bff; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:.78em; font-weight:700; flex-shrink:0; }
         .item-name { font-weight:600; color:#333; }
         .item-sub  { font-size:.82em; color:#888; margin-top:2px; }
-        .btn-del { background:#e74c3c; color:#fff; border:none; padding:5px 12px; border-radius:4px; cursor:pointer; font-size:.8em; font-family:'Quicksand',sans-serif; transition:.2s; }
+        .btn-del { background:#e74c3c; color:#fff; border:none; padding:12px 16px; border-radius:4px; cursor:pointer; font-size:.8em; font-family:'Quicksand',sans-serif; transition:.2s; }
         .btn-del:hover { background:#c0392b; }
         .empty-state { text-align:center; color:#aaa; padding:30px; }
     </style>

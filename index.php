@@ -12,6 +12,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="./Assets/mainstyle/global.css">
+    <link rel="icon" type="image/svg+xml" href="/Assets/media/favicon.svg">
+
 </head>
 
 <body class="landing-page">

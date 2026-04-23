@@ -22,6 +22,7 @@ if (!isset($_SESSION['user_id']) || (($_SESSION['role'] ?? '') !== 'User' && ($_
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..700&family=Quicksand:wght@300..700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <style>

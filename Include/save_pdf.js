@@ -18,8 +18,13 @@ function printAndSavePdf() {
     // Optional: show print dialog
     window.print();
 
-    // Now 'outerHTML' includes the data the user typed
-    let content = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+    const pdfDocument = document.documentElement.cloneNode(true);
+    pdfDocument.querySelectorAll('.sticky-nav, .btn-row-add, .btn-row-del, script').forEach(element => {
+        element.remove();
+    });
+
+    // Now 'outerHTML' includes the data the user typed, without UI-only controls
+    let content = "<!DOCTYPE html>\n" + pdfDocument.outerHTML;
 
     fetch('save_pdf.php', {
         method: 'POST',

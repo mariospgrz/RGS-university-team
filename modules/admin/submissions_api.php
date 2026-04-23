@@ -23,7 +23,7 @@ try {
             $wSql = $where ? 'WHERE ' . implode(' AND ', $where) : '';
 
             $stmt = $pdo->prepare(
-                "SELECT s.submission_id, s.year, s.submitted_at, s.status, s.notes,
+                "SELECT s.submission_id, s.year, s.submitted_at, s.status, s.pdf_path, s.notes,
                         u.user_id, u.first_name, u.last_name, u.email, u.role
                  FROM submissions s
                  JOIN users u ON s.user_id = u.user_id
@@ -55,12 +55,16 @@ try {
             $status = $_POST['status'] ?? '';
             $notes  = trim($_POST['notes'] ?? '');
 
-            if (!$id || !in_array($status, ['Pending','Approved','Rejected'])) {
+            if (!$id || !in_array($status, ['Approved','Rejected'])) {
                 echo json_encode(['success' => false, 'error' => 'Μη έγκυρα δεδομένα']);
                 break;
             }
-            $pdo->prepare("UPDATE submissions SET status=?, notes=? WHERE submission_id=?")
-                ->execute([$status, $notes, $id]);
+            $stmt = $pdo->prepare("UPDATE submissions SET status=?, notes=? WHERE submission_id=? AND status='Pending'");
+            $stmt->execute([$status, $notes, $id]);
+            if ($stmt->rowCount() === 0) {
+                echo json_encode(['success' => false, 'error' => 'This submission has already been handled.']);
+                break;
+            }
             echo json_encode(['success' => true, 'message' => 'Η κατάσταση ενημερώθηκε']);
             break;
 

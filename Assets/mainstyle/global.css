@@ -346,14 +346,13 @@ body.admin-page {
 }
 
 /* Footer */
-.landing-footer {
+.landing-page .landing-footer {
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
 }
-
 
 /* Register Page */
 .register-box {
@@ -431,3 +430,4 @@ h2 {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
