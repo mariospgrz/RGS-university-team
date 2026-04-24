@@ -7,6 +7,7 @@
             <li><a href="manager-submissions.php"<?= $activePage === 'submissions' ? ' class="nav-active"' : '' ?>>Manage Submissions</a></li>
             <li><a href="configure-system.php"<?= $activePage === 'configure' ? ' class="nav-active"' : '' ?>>Configure System</a></li>
             <li><a href="reports.php"<?= $activePage === 'reports' ? ' class="nav-active"' : '' ?>>Reports</a></li>
+            <li><a href="profile.php"<?= $activePage === 'profile' ? ' class="nav-active"' : '' ?>>Profile</a></li>
             <li><a href="../auth/logout.php" class="logout-btn">Logout</a></li>
         </ul>
     </nav>
