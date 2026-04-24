@@ -19,4 +19,4 @@ VALUES('1' , 'admin' , '$2a$12$5KDPQ8zFGGIJEe8Ba9pu.uMsuGbiA0qcrN8t8HhvHLr/YArlH
       ('2' , 'test' , '$2a$12$A04wG/KZVZRhFQ5kYoD3SOpaI/2GET.dhKB73Cgr0hwLOGi2Nj7iq'),/*password is "testing123"*/
       ('3' , 'Nikaros' , '$2a$12$3ruv8Y.0WbfGYbTulhbTLuiRzzWGlM2p7UPhiT/tglribZBjIPH8m'), /*password is "pafos1234"*/
       ('4' , 'Fpana' , '$2y$10$u6PoAYJkTznzt7Gw62rItejoRzLcQqFVsPMlqCgjXStBsQDSKjbyy'), /*password is "feidias12"*/
-      ('5' , 'Aleks' , '$2a$12$bHbrT/87pWLD8hn2b4xoTuTppdWlaw5DHgHkG3jB.z4BUgdbbrVy6'); /*password is "Minister123"*/a
+      ('5' , 'Aleks' , '$2a$12$bHbrT/87pWLD8hn2b4xoTuTppdWlaw5DHgHkG3jB.z4BUgdbbrVy6'); /*password is "Minister123"*/

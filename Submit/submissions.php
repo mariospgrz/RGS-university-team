@@ -31,8 +31,7 @@ if (isset($_GET['clear_view'])) { //if the user clears the view of the politicia
 
 try {
     $targetUserId = (int)($_SESSION['view_submissions_user_id'] ?? $userId); //deafult is the logged in user
-    $targetUserName = trim((string)($_SESSION['view_submissions_user_name'] ?? '')); // if from the POST req get the name and id of the politician
-                                                                                     
+    $targetUserName = trim((string)($_SESSION['view_submissions_user_name'] ?? '')); // if from the POST req get the name and id of the politician                                                                                     
 
     if ($targetUserId <= 0) {
         $targetUserId = $userId; //invalid id -> defautl
