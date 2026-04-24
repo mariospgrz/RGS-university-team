@@ -44,11 +44,26 @@ function printAndSavePdf() {
                 link.click();
                 document.body.removeChild(link);
 
-                // Optional: show a success alert
-                Swal.fire('Success!', 'Your PDF has been saved and downloaded.', 'success');
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your PDF has been saved and downloaded.',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'profile.php';
+                    }
+                });
             } else {
-                console.error('Error saving PDF:', data.message);
-                Swal.fire('Error!', 'Could not save PDF: ' + data.message, 'error');
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Could not save PDF: ' + data.message,
+                    icon: 'error'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'profile.php';
+                    }
+                })
             }
         })
         .catch(err => {
